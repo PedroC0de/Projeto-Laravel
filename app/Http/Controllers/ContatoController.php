@@ -8,7 +8,7 @@ use \App\Models\SiteContato;
 class ContatoController extends Controller {
 
  public function contato(Request $request){
-        
+  //teste de if      
     if(!(empty($request->all()))){
         $contato = new SiteContato();
     $contato->nome = $request->input('nome');
@@ -19,7 +19,8 @@ class ContatoController extends Controller {
 
     $contato->save();
     return(view('site.contato'));
-    }
+    
+}
     }
 }
 
