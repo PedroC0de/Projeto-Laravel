@@ -9,6 +9,11 @@ use \App\Models\SiteContato;
 class ContatoController extends Controller {
 
  public function contato(Request $request){
+
+  $motivo_contatos = [
+    '1' => 'Dúvida',
+    '2' => 'Elogio',
+    '3' => 'Reclamação'  ];
   
     //teste de if      
     /*  if(!(empty($request->all()))){
@@ -32,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"
 $contato->save();
 
 }; */
-return(view('site.contato'));
+return(view('site.contato', ['motivo_contatos' => $motivo_contatos]));
  }
  
 public function salvar(Request $request){
