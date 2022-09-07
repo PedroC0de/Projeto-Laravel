@@ -28,7 +28,7 @@ Route::get('/sobrenos', [SobrenosController::class, 'sobrenos'])->name("site.sob
 
 Route::get('/contato', [ContatoController::class, 'contato'])->name("site.contato");
 
-Route::post('/contato', [ContatoController::class, 'contato'])->name("site.contato");
+Route::post('/contato', [ContatoController::class, 'salvar'])->name("site.contato");
 
 Route::get('/login', function(){ return "login";})->name("site.login");
 
@@ -49,7 +49,7 @@ Route::get('/produtos', function(){
 });
 
 Route::fallback(function(){
- echo 'isso ai não existe seu porra, volta aqui <a href="'.route('site.index').'"> Clica aqui imundo</a>';
+ echo 'Está pagina não existe <a href="'.route('site.index').'">Clique aqui para retornar </a>';
 });
 
 
